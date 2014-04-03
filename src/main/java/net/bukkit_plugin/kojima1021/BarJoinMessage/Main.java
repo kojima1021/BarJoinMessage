@@ -22,8 +22,7 @@ public class Main extends JavaPlugin implements Listener{
     //Plugin開始時
     @Override
     public void onEnable() {
-        //初期設定完了
-        getLogger().info("Ver.1.0.0");
+        //初期設定完了;
         //リスナー登録
         getServer().getPluginManager().registerEvents(this, this);
         getServer().getPluginManager().registerEvents(
@@ -32,6 +31,7 @@ public class Main extends JavaPlugin implements Listener{
         instance = this;
         //BarApi確認
         if (getServer().getPluginManager().isPluginEnabled("BarAPI")) {
+            getLogger().info("Ver.1.0.2");
           }
           else {
             getLogger().info("BarAPIが正常に読み込まれませんでした。");
@@ -44,6 +44,10 @@ public class Main extends JavaPlugin implements Listener{
     //Pluginun終了時
     @Override
     public void onDisable() {
-        getLogger().info("プラグインを正常に終了しました。");
+    	if (getServer().getPluginManager().isPluginEnabled("BarAPI")) {
+            getLogger().info("プラグインを正常に終了しました");
+          }
+          else {
+          }
     }
 }
