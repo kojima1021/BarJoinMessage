@@ -14,13 +14,16 @@ public class JoinEvent implements Listener {
 	@EventHandler
     public void OnJoin(PlayerJoinEvent e) {
 	int seconds = 15;
-	String message = ChatColor.AQUA +e.getPlayer().getName() + ChatColor.WHITE+" さんがサーバーに参加しました。";;
+	Player join = e.getPlayer();
+	String message = ChatColor.AQUA +e.getPlayer().getName() + ChatColor.WHITE+" さんがサーバーに参加しました。";
+	String message2 = ChatColor.AQUA +"あなた"+ChatColor.WHITE+"がサーバーに参加しました。";
 	Player[] pls = Bukkit.getOnlinePlayers();
 	for(int i = 0; i < pls.length; i++)
 	{
 		Player player = pls[i];
 	BarAPI.setMessage(player, message, seconds);
-
+	BarAPI.removeBar(join);
+	BarAPI.setMessage(join, message2, seconds);
     }
 }
 }
