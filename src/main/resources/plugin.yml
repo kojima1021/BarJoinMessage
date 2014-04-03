@@ -1,5 +1,5 @@
 name: BarJoinMessage
 main: net.bukkit_plugin.kojima1021.BarJoinMessage.Main
-version: 1.0.0
+version: 1.0.1
 author: kojima1021
 softdepend: [BarAPI]
